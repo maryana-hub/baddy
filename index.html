@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro Corporal Diario</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>Registro Diario de Cuerpo</h1>
+  <form id="registroForm">
+    <label>Fecha:<input type="date" id="fecha" required/></label>
+    <label>Parte del cuerpo:
+      <select id="parteCuerpo"><option value="cintura">Cintura</option><option value="gluteos">Glúteos</option></select>
+    </label>
+    <div class="momentos">
+      <label>Antes desayuno:<input type="number" id="antesDesayuno" placeholder="cm"/></label>
+      <label>Después desayuno:<input type="number" id="despuesDesayuno" placeholder="cm"/></label>
+      <label>Antes almuerzo:<input type="number" id="antesAlmuerzo" placeholder="cm"/></label>
+      <label>Después almuerzo:<input type="number" id="despuesAlmuerzo" placeholder="cm"/></label>
+      <label>Antes pilates:<input type="number" id="antesPilates" placeholder="cm"/></label>
+      <label>Después pilates:<input type="number" id="despuesPilates" placeholder="cm"/></label>
+      <label>Antes cena:<input type="number" id="antesCena" placeholder="cm"/></label>
+      <label>Después cena:<input type="number" id="despuesCena" placeholder="cm"/></label>
+      <label>Antes masajes:<input type="number" id="antesMasajes" placeholder="cm"/></label>
+      <label>Después masajes:<input type="number" id="despuesMasajes" placeholder="cm"/></label>
+      <label>Hora dormir:<input type="number" id="horaDormir" placeholder="cm"/></label>
+    </div>
+    <label>Peso final del día:<input type="number" id="pesoFinal" placeholder="kg"/></label>
+    <button type="submit">Guardar Registro</button>
+  </form>
+
+  <section id="filtros">
+    <h2>Filtrar por fecha</h2>
+    <label>Desde:<input type="date" id="fechaDesde"/></label>
+    <label>Hasta:<input type="date" id="fechaHasta"/></label>
+    <button id="btnFiltrar">Aplicar filtro</button>
+  </section>
+
+  <section id="graficas">
+    <canvas id="grafCintura"></canvas>
+    <canvas id="grafGluteos"></canvas>
+    <canvas id="grafPeso"></canvas>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
